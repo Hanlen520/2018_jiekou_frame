@@ -1,5 +1,6 @@
 import os,io,csv
 import xlrd
+path=os.path.join(os.path.dirname(os.path.dirname(__file__)),'TestFile/API_case')
 
 def _load_csv_file(csv_file):
     """ load csv file and check file content format
@@ -31,7 +32,7 @@ def _load_csv_file(csv_file):
 
 def get_csv_data(csv_file):
     value_rows = []
-    with open(csv_file, encoding='utf-8') as f:
+    with open(os.path.join(path,csv_file), encoding='utf-8') as f:
         f_csv = csv.reader(f)
         next(f_csv)
         for r in f_csv:

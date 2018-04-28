@@ -7,10 +7,8 @@ from ddt import ddt, data, file_data, unpack
 from conf.config import get_config
 
 
-path=os.path.join(os.path.dirname(os.path.dirname(__file__)),"TestFile\if_regist.csv")
-a=get_csv_data(path)
+a=get_csv_data('if_regist.csv')
 base_url=get_config()['host']
-title="mobile"
 
 
 #使用ddt 参数化
@@ -32,10 +30,3 @@ class Test_if_regist(unittest.TestCase):
 
 if __name__ == '__main__':
     unittest.main(verbosity=2)
-# url=base_url+a[0][0]
-# data=a[0][1]
-# print(url)
-# print(data)
-# print(url+data)
-# r = requests.get(url+data)
-# print(r.json())

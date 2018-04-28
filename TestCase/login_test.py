@@ -7,8 +7,8 @@ from ddt import ddt, data, file_data, unpack
 from conf.config import get_config
 
 
-path=os.path.join(os.path.dirname(os.path.dirname(__file__)),"TestFile\login.csv")
-a=get_csv_data(path)
+#path=os.path.join(os.path.dirname(os.path.dirname(__file__)),"TestFile\login.csv")
+a=get_csv_data('login.csv')
 base_url=get_config()['host']
 
 title=["grant_type","client_id","client_secret","username","password","scope","device_token"]
