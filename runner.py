@@ -38,9 +38,10 @@ class RunTestCase():
             description=u'接口测试报告详情',
         )
         runner.run(RunTestCase().suite)
-        #调用自动发送邮件
-        Send_email("E:\F\zhangwk02\\2018_jiekou_frame\\report").send_email()
+
 
 if __name__ == '__main__':
     R=RunTestCase()
     R.runAutomation()
+    #调用自动发送邮件
+    Send_email("E:\F\zhangwk02\\2018_jiekou_frame\\report").send_email()

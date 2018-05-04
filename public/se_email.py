@@ -77,7 +77,7 @@ class Send_email(object):
         #收件人
         receivers=["zhangwk02@vanke.com"]
 
-        message=MIMEMultipart("related")
+        message=MIMEMultipart()
 
         f=open(self.report,'rb')
         mail_body=f.read()
@@ -90,18 +90,16 @@ class Send_email(object):
 
         msg=MIMEText(mail_body,"html","utf-8")
         message.attach(msg)
+        #message = MIMEText(mail_body, _subtype="html", _charset='utf-8')
         message['From']=mail_sender
         message['TO']=",".join(receivers)
         message["Subject"]=Header("接口自动化测试报告","utf-8")
         smtp=smtplib.SMTP_SSL(mail_host,int(mail_port))
         #smtp.starttls()
         #smtp.connect("Outlook.com",587)
+
         smtp.login(mail_user,mail_password)
-        smtp.sendmail(mail_sender,receivers,message.as_string())
+        smtp.sendmail(mail_sender, receivers, message.as_string())
         smtp.quit()
-
-
-
-
-
+        smtp.close()
 
