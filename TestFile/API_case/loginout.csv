@@ -1,5 +1,2 @@
 No,url,grant_type,client_id,client_secret,username,password,scope,device_token,code,result,token
 1,/api/lebang/oauth/access_token,password,5e96eac06151d0ce2dd9554d7ee167ce,aCE34n89Y277n3829S7PcMN8qANF8Fh,13713576227,abc123457,all,0,6048001,Bearer 42324234
-                                                                                            ,Bearer 5234324234
-                                                                                            ,Bearer 6234323423
-                                                                                            ,Bearer 72334324234

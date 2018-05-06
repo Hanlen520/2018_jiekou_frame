@@ -8,7 +8,11 @@ title=["grant_type","client_id","client_secret","username","password","scope","d
 
 s = requests.Session()
 r=s.post(base_url+a[0][1],dict(zip(title,a[0][2:-2])))
-cookies=requests.utils.dict_from_cookiejar(r.cookies)
-print(setcookie())
+# cookies=requests.utils.dict_from_cookiejar(r.cookies)
+print(dict(zip(title,a[0][2:-2])))
+# print(r.headers)
+# print(r.json())
 # print(r.cookies)
 # print(r.cookies.get_dict())
+# print(r.headers)
+
