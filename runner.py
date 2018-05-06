@@ -44,4 +44,4 @@ if __name__ == '__main__':
     R=RunTestCase()
     R.runAutomation()
     #调用自动发送邮件
-    Send_email("E:\F\zhangwk02\\2018_jiekou_frame\\report").send_email()
+    Send_email("E:\F\zhangwk02\\2018_jiekou_frame0504\\report").send_email()
