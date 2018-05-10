@@ -8,7 +8,7 @@ from ddt import ddt, data, file_data, unpack
 from conf.config import get_config
 
 base_url=get_config()['host']
-a=get_csv_data('get_utags.csv')
+a=get_csv_data('uddate_utags.csv')
 
 """
 print(a)
@@ -19,13 +19,13 @@ for ai in a:
 """
 
 
-#获取用户标签,需要登录
+#更新用户标签,需要登录
 @ddt
-class Test_get_utags(unittest.TestCase):
+class Test_update_utags(unittest.TestCase):
     @data(*a)
     @unpack
-    def test_get_utags(self,*a):
-        r=requests.get(base_url+"/api/lebang/customer/"+a[0]+"/"+a[1]+"/tags", headers={"Authorization": "Bearer"+' '+get_token()})
+    def test_update_utags(self,*a):
+        r=requests.put(base_url+"/api/lebang/customer/"+a[0]+"/"+a[1]+"/tags", headers={"Authorization": "Bearer"+' '+get_token()})
         #1.获取成功时候断言
         if r.json()["code"]==0:
             self.assertEqual([], r.json()["result"])
